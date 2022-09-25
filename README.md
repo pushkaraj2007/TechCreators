@@ -68,6 +68,7 @@ cd TechCreators
 4. Edit:
 
 - On the top right of the JSON file, click on the pencil icon to edit the file by adding your image, name and username.
+- You can add JSON object wherever you want in the file, it will automatically arrange according to alphabetical order.
 - After editing the JSON file, add a commit message and click on the green button saying "Commit Changes". Make sure you have selected the branch you have created.
 
 5. Raise a Pull Request:
