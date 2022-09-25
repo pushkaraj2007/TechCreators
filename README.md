@@ -27,19 +27,19 @@ Before installation, please make sure you have already installed the following t
 ### SSH [Github Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
 ```bash
-$ git clone git@github.com:username/TechCreators
+$ git clone git@github.com:pushkaraj2007/TechCreators
 ```
 
 ### GitHub CLI
 
 ```bash
-$ gh repo clone username/TechCreators
+$ gh repo clone pushkaraj2007/TechCreators
 ```
 
 ### HTTPS
 
 ```bash
-$ git clone https://github.com/username/TechCreators
+$ git clone https://github.com/pushkaraj2007/TechCreators
 ```
 
 - Navigate to the project directory:
