@@ -1,0 +1,30 @@
+{
+  "name": "techcreators",
+  "version": "1.0.0",
+  "description": "The A website to list tech twitter creators, across the world.",
+  "main": "scripts/app.js",
+  "scripts": {
+    "start": "serve -s .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushkaraj2007/TechCreators.git"
+  },
+  "keywords": [
+    "javascript",
+    "css",
+    "html",
+    "good-for-beginners"
+  ],
+  "author": "Pushkaraj Kulkarni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushkaraj2007/TechCreators/issues"
+  },
+  "homepage": "https://github.com/pushkaraj2007/TechCreators#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "serve": "^14.0.1"
+  }
+}
