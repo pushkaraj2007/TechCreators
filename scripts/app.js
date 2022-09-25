@@ -8,10 +8,11 @@ const loadProfiles = async () => {
 
   sortedProfiles.forEach((profile) => {
     let profileDiv = document.createElement('div');
+    const profileUrl = getProfileUrl(profile);
 
     profileDiv.innerHTML = `
-      <a 
-        <img onclick="redirectToProfile(this)" src="${profile.image}" /> 
+      <a href="${profileUrl}" target="_blank">
+        <img src="${profile.image}" /> 
       </a> 
       <p class="profile-name" onclick="redirect(this)">${profile.name}</p>
       <p class="profile-username" onclick="redirect(this)">${profile.username}</p>
@@ -31,12 +32,12 @@ searchInput.addEventListener('keyup', () => {
 
   let profileNames = document.querySelectorAll('.profile-name');
 
-  profileNames.forEach((element) => {
+  profileNames.forEach((profileElement) => {
     if (
-      element.innerText.toLowerCase().includes(searchInput.value.toLowerCase())
+      profileElement.innerText.toLowerCase().includes(searchInput.value.toLowerCase())
     ) {
-      console.log(element.innerText);
-      element.parentElement.style.display = 'flex';
+      console.log(profileElement.innerText);
+      profileElement.parentElement.style.display = 'flex';
     }
   });
 });
