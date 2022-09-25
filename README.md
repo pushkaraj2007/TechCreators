@@ -1,12 +1,13 @@
 # TechCreators
+
 A website to list tech twitter creators, across the world.
 
 ## Languages/Tools
 
-
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a>
 <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg" width="36" height="36" alt="CSS3" /></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
+
 ## 👩🏽‍💻 Demo
 
 Check out the website: [TechCreators](https://techcreators.vercel.app)
@@ -23,12 +24,11 @@ Before installation, please make sure you have already installed the following t
 
 - Use these commands in your git bash to make a clone of the project in your pc.
 
-### SSH  [Github Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+### SSH [Github Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
 ```bash
 $ git clone git@github.com:username/TechCreators
 ```
-
 
 ### GitHub CLI
 
@@ -41,7 +41,6 @@ $ gh repo clone username/TechCreators
 ```bash
 $ git clone https://github.com/username/TechCreators
 ```
-
 
 - Navigate to the project directory:
 
@@ -76,6 +75,14 @@ cd TechCreators
 - And finally create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)!
 - Great job! You did it!
 
+
+## 🚀 Running locally
+To run locally, just `cd` into the project and run the following commands to run node modules and serve the website locally.
+```bash
+npm i
+npm run start
+```
+
 ## 🛡️ License
 
 TechCreators is licensed under the MIT License - see the [LICENSE](Licence) file for details.
@@ -89,4 +96,3 @@ Thank you so much all for spending your time to improve TechCreators. Keep shini
 ## 🙏🏽 Support
 
 This project needs a star️ from you. Don't forget to leave a star 🌟
-
