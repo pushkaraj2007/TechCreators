@@ -75,6 +75,14 @@ cd TechCreators
 - And finally create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)!
 - Great job! You did it!
 
+
+## 🚀 Running locally
+To run locally, just `cd` into the project and run the following commands to run node modules and serve the website locally.
+```bash
+npm i
+npm run start
+```
+
 ## 🛡️ License
 
 TechCreators is licensed under the MIT License - see the [LICENSE](Licence) file for details.
