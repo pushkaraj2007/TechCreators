@@ -70,10 +70,15 @@
        "name": "Rohit Rajvaidya",
        "username": "@RohitCode25"
     },
-     {
+    {
        "image": "https://avatars.githubusercontent.com/u/74578232?v=4",
        "name": "Gayatri Dunakhe",
        "username": "@GayatriDunakhe"
+    },
+    {
+       "image": "https://pbs.twimg.com/profile_images/1570432141921554433/x1LoSpXJ_400x400.jpg",
+       "name": "Hamza Yehia",
+       "username": "@HamzaYehia44"
     }
     
 ]
