@@ -96,8 +96,13 @@ nav input {
   color: #cdcdcd;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   nav input {
     width: 200px;
+  }
+
+  .profile-div {
+    width: 70vw;
+    margin: 1em auto;
   }
 }
