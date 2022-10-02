@@ -15,7 +15,7 @@ const loadProfiles = async () => {
         <img src="${profile.image}" /> 
       </a> 
       <p class="profile-name" onclick="redirect(this)">${profile.name}</p>
-      <p class="profile-username" onclick="redirect(this)">${profile.username}</p>
+      <p class="profile-username" onclick="redirect(this)">@${profile.username}</p>
     `;
     profileDiv.classList.add('profile-div');
 
