@@ -60,10 +60,10 @@ nav input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   transition: 0.5s;
-  padding: 2em 1em;
-  background: #2c2c2c;
+  padding: 2em 1em 1em 1em;
+  background: #353535;
   color: #fff;
   border-radius: 0.5em;
   box-shadow: #000 2px 2px 2px;
@@ -80,6 +80,35 @@ nav input {
   border-radius: 100%;
   cursor: pointer;
   border: 3px solid #00acee;
+  transition: all 0.3s;
+  box-shadow: #000 2px 2px 4px;
+}
+
+.profile-div img:hover {
+  transform: scale(1.05);
+  border-color: chartreuse;
+}
+
+.profile-div>a:nth-child(4) {
+  width: 100%;
+}
+
+.profile-div button {
+  background: #00acee;
+  width: 100%;
+  margin: 1.5em auto 0 auto;
+  height: 2em;
+  border-radius: 0.3em;
+  border: transparent 2px solid;
+  font-size: 1.05em;
+  transition: all 0.3s;
+  box-shadow: #000 2px 2px 4px;
+
+}
+
+.profile-div button:hover {
+  background-color: chartreuse;
+  transform: scale(0.9) translate(0px, 2px);
 }
 
 .profile-div p:nth-child(2) {
@@ -91,7 +120,7 @@ nav input {
 }
 
 .profile-div p:nth-child(3) {
-  font-size: 18px;
+  font-size: 1em;
   cursor: pointer;
   color: #cdcdcd;
 }

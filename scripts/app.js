@@ -16,6 +16,8 @@ const loadProfiles = async () => {
       </a> 
       <p class="profile-name" onclick="redirect(this)">${profile.name}</p>
       <p class="profile-username" onclick="redirect(this)">@${profile.username}</p>
+      <a href="${profileUrl}" target="_blank"><button>Follow</button></a> 
+      
     `;
     profileDiv.classList.add('profile-div');
 
