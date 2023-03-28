@@ -1,5 +1,10 @@
 [
   {
+    "image": "https://pbs.twimg.com/profile_images/1624829578773692416/YP2pciu8.jpg",
+    "name": "Upendra Sahni",
+    "username": "Upendra17916450"
+  },
+  {
     "image": "https://pbs.twimg.com/profile_images/1612444655827955714/S67PXLCx_400x400.jpg",
     "name": "Pushkaraj Kulkarni",
     "username": "pushkaraj2007"
@@ -89,7 +94,7 @@
     "name": "Shubham Patrick",
     "username": "AHTHneeuhl"
   },
-   {
+  {
     "image": "https://pbs.twimg.com/profile_images/1479318888827568133/tzxFMSdy_400x400.jpg",
     "name": "LearnWeb3",
     "username": "LearnWeb3DAO"
@@ -144,5 +149,4 @@
     "name": "Awais",
     "username": "Awais_209"
   }
-  
 ]
