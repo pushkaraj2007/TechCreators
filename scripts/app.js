@@ -1,5 +1,6 @@
 const allProfilesDiv = document.querySelector('.all-profiles-div');
 const searchInput = document.querySelector('.search-input');
+const defaultImage = "https://res.cloudinary.com/djxkmpkuq/image/upload/v1680859085/R_kcyx7x.png"
 
 const loadProfiles = async () => {
   let data = await fetch('/profiles/profiles.json');
@@ -10,15 +11,39 @@ const loadProfiles = async () => {
     let profileDiv = document.createElement('div');
     const profileUrl = getProfileUrl(profile);
 
-    profileDiv.innerHTML = `
-      <a href="${profileUrl}" target="_blank">
-        <img src="${profile.image}" /> 
-      </a> 
-      <p class="profile-name" onclick="redirect(this)">${profile.name}</p>
-      <p class="profile-username" onclick="redirect(this)">@${profile.username}</p>
-      <a href="${profileUrl}" target="_blank"><button>Follow</button></a> 
+    function isImage(url) {
+      var img = new Image ()
+      img.src = url
+      return img.complete && img.naturalHeight >= 0 && img.naturalWidth >= 0
+    }
+
+    if (isImage(profile.image)) {
       
-    `;
+      profileDiv.innerHTML = `
+        <a href="${profileUrl}" target="_blank">
+          <img src="${profile.image}" /> 
+        </a> 
+        <p class="profile-name" onclick="redirect(this)">${profile.name}</p>
+        <p class="profile-username" onclick="redirect(this)">@${profile.username}</p>
+        <a href="${profileUrl}" target="_blank"><button>Follow</button></a> 
+        
+      `;
+    }  else{
+
+      profileDiv.innerHTML = `
+        <a href="${profileUrl}" target="_blank">
+          <img src="${defaultImage}" /> 
+        </a> 
+        <p class="profile-name" onclick="redirect(this)">${profile.name}</p>
+        <p class="profile-username" onclick="redirect(this)">@${profile.username}</p>
+        <a href="${profileUrl}" target="_blank"><button>Follow</button></a> 
+        
+      `;
+
+    }
+    
+
+
     profileDiv.classList.add('profile-div');
 
     allProfilesDiv.append(profileDiv);
