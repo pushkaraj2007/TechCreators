@@ -103,7 +103,7 @@ nav input {
   font-size: 1.05em;
   transition: all 0.3s;
   box-shadow: #000 2px 2px 4px;
-
+  cursor: pointer;
 }
 
 .profile-div button:hover {
