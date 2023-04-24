@@ -42,6 +42,12 @@ nav input {
 .twitter-img {
   margin-right: 60px;
 }
+.img-div img{
+  transition: transform 1s;
+}
+.img-div img:hover{
+  transform: scale(1.4);
+}
 
 .img-div img {
   height: 30px;
