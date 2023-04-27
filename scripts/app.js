@@ -9,8 +9,8 @@ const loadProfiles = async () => {
 
   sortedProfiles.forEach((profile) => {
     let profileDiv = document.createElement('div');
-    const profileUrl = getProfileUrl(profile);
-  
+    let profileUrl = `https://twitter.com/${profile.username}`;
+
     profileDiv.innerHTML = `
       <a href="${profileUrl}" target="_blank">
         <img src="${profile.image}" onerror="this.onerror=null; this.src='${defaultImage}';"/> 
@@ -19,11 +19,9 @@ const loadProfiles = async () => {
       <p class="profile-username" onclick="redirect(this)">@${profile.username}</p>
       <a href="${profileUrl}" target="_blank"><button>Follow</button></a> 
     `;
-    
     profileDiv.classList.add('profile-div');
     allProfilesDiv.append(profileDiv);
   });
-  
 };
 
 searchInput.addEventListener('keyup', () => {
@@ -34,22 +32,24 @@ searchInput.addEventListener('keyup', () => {
   }
 
   let profileNames = document.querySelectorAll('.profile-name');
-
+  let visibleProfiles = 0;
   profileNames.forEach((profileElement) => {
     if (
-      profileElement.innerText.toLowerCase().includes(searchInput.value.toLowerCase())
+      profileElement.innerText.toLowerCase().includes(searchInput.value.toLowerCase().trim())
     ) {
-      console.log(profileElement.innerText);
       profileElement.parentElement.style.display = 'flex';
+      visibleProfiles++;
     }
   });
+
+  // if there is a profile to show, hide the no profile div
+  if (visibleProfiles !== 0) {
+    document.querySelector('.no-profile-div').style.display = 'none';
+  } else {
+    document.querySelector('.no-profile-div').style.display = 'flex';
+  }
 });
 
-const getProfileUrl = (profile) => {
-  const baseUrl = 'https://twitter.com/';
-  const url = baseUrl + profile.username;
-
-  return url;
-}
-
+// load all profiles
 loadProfiles();
+
