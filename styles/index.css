@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,7 +11,8 @@ body {
 }
 
 nav {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
@@ -37,7 +39,7 @@ nav {
   outline: none;
   flex: 1;
   font-size: 1.2rem;
-  width: 500px;
+  width: min(60vw, 600px);
   padding: 0.5rem;
   padding-left: 30px;
   border: 1px solid #ccc;
@@ -50,11 +52,9 @@ nav {
 
 .img-div {
   display: flex;
-  margin-right: 60px;
-}
-
-.twitter-img {
-  margin-right: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .img-div img {
@@ -168,9 +168,6 @@ nav {
 }
 
 @media (max-width: 500px) {
-  nav input {
-    width: 200px;
-  }
 
   .profile-div {
     width: 70vw;
