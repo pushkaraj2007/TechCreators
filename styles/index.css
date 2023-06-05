@@ -167,6 +167,43 @@ nav {
   color: #cdcdcd;
 }
 
+.night-mode {
+  background: #2e2e2e;
+  color: #fff;
+}
+
+.rounded {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 1s;
+}
+
+.background-sun{
+  background-color: #353535;
+}
+
+.background-moon{
+  background-color: rgb(156 163 175)
+}
+
+.fa-sun {
+  color: #eab308;
+}
+
+.fa-moon {
+color: #1f2937;
+}
+
+.rounded:hover {
+    transform: scale(1.1);
+}
 @media (max-width: 500px) {
 
   .profile-div {
@@ -174,3 +211,6 @@ nav {
     margin: 1em auto;
   }
 }
+
+
+
