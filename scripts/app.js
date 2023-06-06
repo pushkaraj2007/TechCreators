@@ -1,6 +1,9 @@
 const allProfilesDiv = document.querySelector('.all-profiles-div');
 const searchInput = document.querySelector('.search-input');
+const btn = document.querySelector('.rounded')
+const btnIcon = document.querySelector('.fa-solid')
 const defaultImage = "https://res.cloudinary.com/djxkmpkuq/image/upload/v1680859085/R_kcyx7x.png"
+
 
 const loadProfiles = async () => {
   let data = await fetch('/profiles/profiles.json');
@@ -21,6 +24,7 @@ const loadProfiles = async () => {
     `;
     profileDiv.classList.add('profile-div');
     allProfilesDiv.append(profileDiv);
+    
   });
 };
 
@@ -49,6 +53,12 @@ searchInput.addEventListener('keyup', () => {
     document.querySelector('.no-profile-div').style.display = 'flex';
   }
 });
+
+btn.addEventListener('click', e => {
+  btn.classList.toggle('background-moon')
+  btnIcon.classList.toggle('fa-moon')
+  document.body.classList.toggle('night-mode')
+ })
 
 // load all profiles
 loadProfiles();
