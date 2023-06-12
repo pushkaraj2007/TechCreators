@@ -168,7 +168,9 @@ nav {
 }
 
 .night-mode {
-  background: #2e2e2e;
+  /* background: #2e2e2e; */
+  background: #000000e3;
+  
   color: #fff;
 }
 
