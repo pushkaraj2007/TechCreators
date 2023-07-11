@@ -216,12 +216,10 @@ color: #1f2937;
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #A0A0A0;
-}
+
 
 ::-webkit-scrollbar-thumb {
-  background: #353535;
+  background: #A0A0A0;
 }
 
 
