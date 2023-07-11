@@ -212,5 +212,15 @@ color: #1f2937;
   }
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+
+::-webkit-scrollbar-thumb {
+  background: #A0A0A0;
+}
+
 
 
