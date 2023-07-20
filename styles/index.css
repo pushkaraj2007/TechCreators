@@ -203,6 +203,11 @@ nav {
 color: #1f2937;
 }
 
+.github-img {
+  background-color: white;
+  border-radius: 50%;
+}
+
 .rounded:hover {
     transform: scale(1.1);
 }
@@ -211,6 +216,12 @@ color: #1f2937;
   .profile-div {
     width: 70vw;
     margin: 1em auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .github-img {
+    background-color: white;
   }
 }
 
