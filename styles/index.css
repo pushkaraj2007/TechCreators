@@ -21,12 +21,27 @@ nav {
 .input-div {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.search-icon-container {
+  background-color: #00acee;
+  border-radius: 0 1.1rem 1.1rem 0;
+  padding: 5px 15px;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  /* Center the container vertically */
+
 }
 
 .input-div img {
-  position: absolute;
+
   height: 22px;
-  margin-left: 5px;
+  right: 10px;
+  transition: all 0.3s;
+  filter: brightness(0) invert(1);
 }
 
 .input-div img:hover {
@@ -38,16 +53,22 @@ nav {
   border: none;
   outline: none;
   flex: 1;
-  font-size: 1.2rem;
-  width: min(60vw, 600px);
+  font-size: 1rem;
+  width: min(60vw, 460px);
   padding: 0.5rem;
-  padding-left: 30px;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  padding-left: 20px;
+  border: 1px solid darkgrey;
+  border-radius: 1.1rem;
+
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  ;
+
 }
 
 .search-input::placeholder {
-  color: black;
+  color: rgb(100, 100, 100);
+
 }
 
 .img-div {
@@ -170,12 +191,12 @@ nav {
 .night-mode {
   /* background: #2e2e2e; */
   background: #000000e3;
-  
+
   color: #fff;
 }
 
 .rounded {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 10px;
@@ -187,11 +208,11 @@ nav {
   transition: transform 1s;
 }
 
-.background-sun{
+.background-sun {
   background-color: #353535;
 }
 
-.background-moon{
+.background-moon {
   background-color: rgb(156 163 175)
 }
 
@@ -200,12 +221,13 @@ nav {
 }
 
 .fa-moon {
-color: #1f2937;
+  color: #1f2937;
 }
 
 .rounded:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 @media (max-width: 500px) {
 
   .profile-div {
@@ -223,6 +245,3 @@ color: #1f2937;
 ::-webkit-scrollbar-thumb {
   background: #A0A0A0;
 }
-
-
-
