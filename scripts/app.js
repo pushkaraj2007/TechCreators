@@ -5,7 +5,30 @@ const btnIcon = document.querySelector('.fa-solid')
 const defaultImage = "https://res.cloudinary.com/djxkmpkuq/image/upload/v1680859085/R_kcyx7x.png"
 
 
+
+
+
 const loadProfiles = async () => {
+  // await console.log("origional" , document.body.classList.contains('night-mode'))
+
+
+  if (localStorage.getItem('mode') === 'light') {
+    btn.classList.remove('background-moon')
+    btnIcon.classList.remove('fa-moon')
+    document.body.classList.remove('night-mode')
+
+    
+  } else {
+    btn.classList.add('background-moon')
+    btnIcon.classList.add('fa-moon')
+    document.body.classList.add('night-mode')
+
+  }
+
+
+
+
+
   let data = await fetch('/profiles/profiles.json');
   let profiles = await data.json();
   let sortedProfiles = profiles.sort((a, b) => a.name.localeCompare(b.name));
@@ -55,9 +78,26 @@ searchInput.addEventListener('keyup', () => {
 });
 
 btn.addEventListener('click', e => {
-  btn.classList.toggle('background-moon')
-  btnIcon.classList.toggle('fa-moon')
-  document.body.classList.toggle('night-mode')
+
+  //   btn.classList.toggle('background-moon')
+  // btnIcon.classList.toggle('fa-moon')
+  //   document.body.classList.toggle('night-mode')
+    
+  //   console.log(document.body.classList.contains('night-mode'))
+
+  if (document.body.classList.contains('night-mode')) {
+    btn.classList.remove('background-moon')
+    btnIcon.classList.remove('fa-moon')
+    document.body.classList.remove('night-mode')
+    localStorage.setItem('mode', 'light')
+    
+  } else {
+    btn.classList.add('background-moon')
+    btnIcon.classList.add('fa-moon')
+    document.body.classList.add('night-mode')
+    localStorage.setItem('mode', 'dark')
+  }
+
  })
 
 // load all profiles
