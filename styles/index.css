@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
+/* Add this to the top of your CSS file, replacing old global styles */
+:root {
+  /* Light Mode Colors (Default) */
+  --primary-color: #007BFF;
+  --secondary-color: #00BFFF;
+  --background-dark: #F4F7FC; /* Light gray for background */
+  --card-dark: #FFFFFF;       /* White for cards */
+  --text-primary: #121212;     /* Dark text */
+  --text-secondary: #555555;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --glow-color: rgba(0, 123, 255, 0.3);
+}
+
+body.night-mode {
+  /* Dark Mode Colors */
+  --primary-color: #007BFF;
+  --secondary-color: #00BFFF;
+  --background-dark: #121212;  /* Dark background */
+  --card-dark: #1E1E1E;        /* Dark gray for cards */
+  --text-primary: #EAEAEA;      /* Light text */
+  --text-secondary: #A0A0A0;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --glow-color: rgba(0, 123, 255, 0.7);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,151 +32,170 @@
 }
 
 body {
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
+  display: flex;
+  flex-direction: column;
   font-family: 'Quicksand', sans-serif;
+  background: var(--background-dark);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+.container {
+  flex-grow: 1; /* This is the key: it makes the container expand */
+}
+.all-profiles-div {
+  display: flex;          /* Tells the container to arrange its children in a row */
+  flex-wrap: wrap;        /* Allows the cards to wrap to the next line if there isn't enough space */
+  justify-content: center;/* Centers the cards horizontally */
+  gap: 2em;               /* Adds consistent spacing between all cards */
+  padding: 40px 10px;     /* Adds some breathing room around the grid of cards */
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+/* Replace your existing nav styles */
+/* Replace all existing 'nav', '.input-div', and '.img-div' styles with this block */
 
 nav {
   width: 90%;
   margin: 0 auto;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
+  padding: 15px 0;
+  display: grid; /* Switched to Grid */
+  grid-template-columns: 1fr auto 1fr; /* Create 3 columns (left, center, right) */
+  align-items: center;
+  gap: 1rem; /* Adds space between the sections */
+  
+  /* Sticky and glassmorphism styles from before */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--card-dark);
 }
 
 .input-div {
-  display: flex;
-  align-items: center;
+  /* This will be placed in the center column automatically */
   position: relative;
+  display: flex;
+  justify-self: center; /* Center the search bar in its grid area */
 }
 
+.img-div {
+  /* This is the third element, so it goes in the third column */
+  display: flex;
+  justify-content: flex-end; /* Align the icons to the right */
+  align-items: center;
+  gap: 1rem;
+}
+
+/* These styles remain the same but are good to keep with the block */
+.img-div img {
+  transition: transform 0.3s ease; /* Softer transition */
+  height: 30px;
+}
+
+.img-div img:hover {
+  transform: scale(1.15);
+}
+
+.github-img {
+  background-color: white;
+  border-radius: 50%;
+}
+/* Replace your existing .search-icon-container styles */
 .search-icon-container {
-  background-color: #00acee;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradient background */
   border-radius: 0 1.1rem 1.1rem 0;
   padding: 5px 15px;
   position: absolute;
   top: 50%;
   right: 0px;
   transform: translateY(-50%);
-  /* Center the container vertically */
-
+  height: 100%; /* Make it full height of the input */
+  display: flex; /* Center the icon */
+  align-items: center;
+  justify-content: center;
 }
 
-.input-div img {
-
-  height: 22px;
-  right: 10px;
-  transition: all 0.3s;
-  filter: brightness(0) invert(1);
-}
-
-.input-div img:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
+/* Update search input for new theme */
 .search-input {
-  border: none;
+  border: 1px solid var(--card-dark);
   outline: none;
-  flex: 1;
   font-size: 1rem;
   width: min(60vw, 460px);
-  padding: 0.5rem;
+  padding: 0.8rem; /* Increased padding */
   padding-left: 20px;
-  border: 1px solid darkgrey;
   border-radius: 1.1rem;
+  background-color: var(--card-dark); /* Match theme */
+  color: var(--text-primary); /* Match theme */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
 
-
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  ;
-
+.search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--glow-color); /* Glow effect on focus */
 }
 
 .search-input::placeholder {
-  color: rgb(100, 100, 100);
-
+  color: var(--text-secondary);
 }
 
-.img-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.img-div img {
-  transition: transform 1s;
-}
-
-.img-div img:hover {
-  transform: scale(1.4);
-}
-
-.img-div img {
-  height: 30px;
-}
-
-.all-profiles-div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 60px;
-}
-
+/* Replace your existing .profile-div and its child element styles */
 .profile-div {
-  width: 12em;
+  width: 13em;
   margin: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  transition: 0.5s;
-  padding: 2em 1em 1em 1em;
-  background: #353535;
-  color: #fff;
-  border-radius: 0.5em;
-  box-shadow: #000 2px 2px 2px;
-  border: 2px solid transparent;
+  padding: 2em 1em 1.5em 1em;
+  background: linear-gradient(145deg, #2a2a2a, var(--card-dark)); /* Subtle gradient */
+  color: var(--text-primary);
+  border-radius: 12px; /* Softer radius */
+  border: 1px solid #333;
+  box-shadow: 0 8px 30px var(--shadow-color);
+  position: relative;
+  overflow: hidden; /* Important for the glow effect */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .profile-div:hover {
-  transform: scale(1.05);
-  box-shadow: #000 2px 2px 4px;
+  transform: translateY(-8px) scale(1.03); /* Lift up effect */
+  box-shadow: 0 12px 40px var(--shadow-color), 0 0 20px var(--glow-color); /* Add glow */
 }
 
 .profile-div img {
   height: 100px;
-  border-radius: 100%;
+  width: 100px; /* Ensure it's a circle */
+  object-fit: cover; /* Prevent image stretching */
+  border-radius: 50%;
   cursor: pointer;
-  border: 3px solid #00acee;
-  transition: all 0.3s;
-  box-shadow: #000 2px 2px 4px;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 15px var(--glow-color); /* Add a default glow */
+  transition: all 0.3s ease;
 }
 
-.profile-div img:hover {
+.profile-div:hover img {
   transform: scale(1.05);
-  border-color: chartreuse;
-}
-
-.profile-div>a:nth-child(4) {
-  width: 100%;
-}
-
-.profile-div button {
-  background: #00acee;
-  width: 100%;
-  margin: 1.5em auto 0 auto;
-  height: 2em;
-  border-radius: 0.3em;
-  border: transparent 2px solid;
-  font-size: 1.05em;
-  transition: all 0.3s;
-  box-shadow: #000 2px 2px 4px;
-  cursor: pointer;
-}
-
-.profile-div button:hover {
-  background-color: chartreuse;
-  transform: scale(0.9) translate(0px, 2px);
+  border-color: var(--secondary-color); /* Brighter border on hover */
+  box-shadow: 0 0 25px var(--glow-color);
 }
 
 .profile-div p:nth-child(2) {
@@ -159,205 +203,149 @@ nav {
   font-size: 20px;
   cursor: pointer;
   text-align: center;
-  margin: 1em auto 0em auto;
+  margin: 1em auto 0.2em auto; /* Adjusted margin */
 }
 
 .profile-div p:nth-child(3) {
   font-size: 1em;
   cursor: pointer;
-  color: #cdcdcd;
+  color: var(--text-secondary); /* Use variable */
+  margin-bottom: 1.5em; /* Add space before button */
 }
 
-.no-profile-div {
+.profile-div>a:nth-child(4) {
   width: 100%;
-  margin-top: 60px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #fff;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
 }
 
-.no-profile-div>p {
-  margin-top: 1em;
-  font-size: 1em;
-  font-weight: normal;
-  color: #cdcdcd;
-}
-
-.night-mode {
-  /* background: #2e2e2e; */
-  background: #000000e3;
-
-  color: #fff;
-}
-
-.rounded {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-  width: 30px;
-  height: 30px;
-  font-size: 24px;
-  border-radius: 50px;
+.profile-div button {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: #fff; /* White text for contrast */
+  width: 100%;
+  margin: 0; /* Remove top margin */
+  height: 2.5em; /* Taller button */
+  border-radius: 8px; /* Softer radius */
+  border: none;
+  font-size: 1.05em;
+  font-weight: bold; /* Bolder font */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: transform 1s;
+  transition: all 0.3s ease;
 }
 
-.background-sun {
-  background-color: #353535;
+.profile-div button:hover {
+  transform: scale(1.05); /* Enlarge on hover */
+  filter: brightness(1.2); /* Make it brighter */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
-.background-moon {
-  background-color: rgb(156 163 175)
-}
-
-.fa-sun {
-  color: #eab308;
-}
-
-.fa-moon {
-  color: #1f2937;
-}
-
-.github-img {
-  background-color: white;
-  border-radius: 50%;
-}
-
-.rounded:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 500px) {
-
-  .profile-div {
-    width: 70vw;
-    margin: 1em auto;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .github-img {
-    background-color: white;
-  }
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #A0A0A0;
-}
-
-.footer{
-  background-color: #353535;
-  padding: 70px 0;
-}
-
-.footer-container{
+.footer-container {
   max-width: 1170px;
   margin: auto;
 }
 
-.row{
-  display: flex;
-  flex-wrap: wrap;
+.row {
+  display: flex;      /* This is the key fix: arranges the columns horizontally */
+  flex-wrap: wrap;    /* Allows columns to stack on smaller screens */
+  margin: 0 -15px;    /* Adjust for padding on columns */
 }
 
-.footer-col{
-  width: 30%;
+.footer-col {
+  width: 50%;         /* On medium screens, two columns per row */
   padding: 0 15px;
+  margin-bottom: 30px;
 }
 
-.footer-col h4{
+/* On larger screens, we can have more columns if you add them */
+@media(min-width: 768px) {
+  .footer-col {
+    width: 33.33%; /* Example for a three-column layout */
+  }
+}
+
+/* On small screens, each column takes full width */
+@media(max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+.footer {
+  background-color: var(--card-dark); /* Match card background */
+  padding: 70px 0;
+  border-top: 1px solid #333; /* Add separator line */
+}
+
+.footer-col h4 {
   font-size: 18px;
-  color: #ffffff;
+  color: var(--text-primary); /* Use variable */
   text-transform: capitalize;
   margin-bottom: 35px;
   font-weight: 500;
   position: relative;
 }
 
-.footer-col h4::before{
+/* Use primary theme color for the underline */
+.footer-col h4::before {
   content: '';
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #e91e63;
+  background-color: var(--primary-color); /* Use variable */
   height: 2px;
   box-sizing: border-box;
   width: 50px;
 }
 
-ul{
-  list-style: none;
-}
-
-.footer-col ul li:not(:last-child){
-  margin-bottom: 10px;
-}
-
-.footer-col ul li p{
+.footer-col ul li p,
+.footer-col ul li p a {
   font-size: 16px;
   text-transform: capitalize;
-  color: #ffffff;
   text-decoration: none;
   font-weight: 300;
-  color: #bbbbbb;
+  color: var(--text-secondary); /* Use variable */
   display: block;
   transition: all 0.3s ease;
 }
 
-.footer-col ul li p a{
-  font-size: 16px;
-  text-transform: capitalize;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300;
-  color: #bbbbbb;
-  transition: all 0.3s ease;
-}
-
-.footer-col ul li p:hover{
-  color: #ffffff;
+.footer-col ul li p:hover,
+.footer-col ul li p a:hover {
+  color: var(--text-primary); /* Use variable */
   padding-left: 8px;
 }
 
-.footer-col .social-links a{
+.footer-col .social-links a {
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #333; /* Darker background */
   margin: 0 10px 10px 0;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  color: #ffffff;
+  color: var(--text-secondary); /* Use variable */
   white-space: nowrap;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
-.footer-col .social-links a:hover{
-  color: #24262b;
-  background-color: #ffffff;
+.footer-col .social-links a:hover {
+  color: #fff;
+  background-color: var(--primary-color); /* Use variable */
+  transform: translateY(-3px);
+}
+.no-profile-div {
+  width: 100%;
+  margin-top: 60px;
+  display: none; /* This is the key: it hides the element by default */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--text-primary);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
 }
 
-@media(max-width: 767px) {
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-  }
-}
-
-@media(max-width: 574px) {
-  .footer-col{
-    width: 100%;
-    margin-left: 20px;
-  }
+.no-profile-div > p {
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: normal;
+  color: var(--text-secondary);
 }
